@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML, CSS</title>
+    <meta charset="utf-8" />
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <table id="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Group</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tr>
+          <td class="id">1</td>
+          <td class="name">Son Vu</td>
+          <td class="group">Tu Dai Ac Nhan</td>
+          <td><button class="show">Show</button></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Nhan Hoang</td>
+          <td>Tu Dai Ac Nhan</td>
+          <td><button class="show">Show</button></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Anh Le</td>
+          <td>Tam Ninh Huyen Thoai</td>
+          <td><button class="show">Show</button></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Phuc Pham</td>
+          <td>Tam Ninh Huyen Thoai</td>
+          <td><button class="show">Show</button></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+  <script>
+    $(document).ready(function () {
+      $(".show").on("click", function () {
+        var currentRow = $(this).closest("tr");
+        var col1 = currentRow.find("td:eq(0)").html();
+        var col2 = currentRow.find("td:eq(1)").html();
+        var col3 = currentRow.find("td:eq(2)").html();
+        var data =
+          "Information\n" +
+          "ID: " +
+          col1 +
+          "\n" +
+          "Name: " +
+          col2 +
+          "\n" +
+          "Group: " +
+          col3;
+        alert(data);
+      });
+    });
+  </script>
+</html>

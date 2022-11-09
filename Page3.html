@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML, CSS</title>
+    <meta charset="utf-8" />
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <form name="form">
+        <table class="table">
+          <tr>
+            <td>First Name</td>
+            <td>
+              <input
+                type="text"
+                name="first_name"
+                maxlength="25"
+                required
+                class="first_name"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Last Name</td>
+            <td>
+              <input
+                type="text"
+                name="last_name"
+                maxlength="25"
+                required
+                class="last_name"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Year old</td>
+            <td>
+              <input
+                type="number"
+                name="year_old"
+                min="15"
+                max="150"
+                required
+                class="year_old"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Start date</td>
+            <td>
+              <input
+                type="date"
+                name="start_date"
+                required
+                class="start_date"
+                id="date_timepicker_end"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Phone number</td>
+            <td>
+              <input
+                type="number"
+                name="phone"
+                pattern="[+]?[0-9]"
+                required
+                class="phone"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" style="text-align: right">
+              <button class="show">Submit</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+  <script>
+    $(document).ready(function () {
+      $(".show").on("click", function () {
+        var first_name = $(".first_name").val();
+        var last_name = $(".last_name").val();
+        var year_old = $(".year_old").val();
+        var start_date = $(".start_date").val();
+        var phone = $(".phone").val();
+        var data =
+          "Information\n" +
+          "First_name: " +
+          first_name +
+          "\n" +
+          "Last_name: " +
+          last_name +
+          "\n" +
+          "Year_old: " +
+          year_old +
+          "\n" +
+          "Start_date: " +
+          start_date +
+          "\n" +
+          "Phone: " +
+          phone +
+          "\n";
+        alert(data);
+      });
+    });
+  </script>
+</html>

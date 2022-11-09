@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML, CSS</title>
+    <meta charset="utf-8" />
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <form name="form">
+        <table class="table">
+          <tr>
+            <td>First Name</td>
+            <td><input type="text" id="first_name" value="" required /></td>
+          </tr>
+          <tr>
+            <td>Last Name</td>
+            <td><input type="text" id="last_name" value="" required /></td>
+          </tr>
+          <tr>
+            <td>Sex</td>
+            <td style="display: flex">
+              <input type="radio" id="male" name="gender" value="Male" />
+              <label for="html">Male</label><br />
+              <input type="radio" id="female" name="gender" value="Female" />
+              <label for="css">Female</label><br />
+            </td>
+          </tr>
+          <tr>
+            <td>Nationality</td>
+            <td>
+              <select id="nationality">
+                <option value="Singapore">Singapore</option>
+                <option value="United State">United State</option>
+                <option value="VietNam">VietNam</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Full Name</td>
+            <td id="full_name"></td>
+          </tr>
+          <tr>
+            <td>Sex</td>
+            <td id="sex"></td>
+          </tr>
+          <tr>
+            <td>Nationality</td>
+            <td id="nat"></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+  <script>
+    $(document).ready(function () {
+      $("#first_name").change(function () {
+        var first_name = $("#first_name").val();
+        document.getElementById("full_name").innerHTML = first_name;
+      });
+      $("#last_name").change(function () {
+        var last_name = $("#last_name").val();
+        document.getElementById("full_name").append(" " + last_name);
+      });
+      $("#nationality").change(function () {
+        var nationality = $("#nationality").val();
+        document.getElementById("nat").innerHTML = nationality;
+      });
+      $("input:radio[name=gender]").change(function () {
+        var sex = $('input[name="gender"]:checked').val();
+        document.getElementById("sex").innerHTML = sex;
+      });
+    });
+  </script>
+</html>
